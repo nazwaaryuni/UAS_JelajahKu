@@ -71,8 +71,11 @@
                         <select class="form-select select2-default @error('role') is-invalid  @enderror" id="role"
                             name="role" required>
                             <option value="">Pilih Role</option>
-                            <option value="Superadmin" @selected(old('role') == 'Superadmin')>Superadmin</option>
-                            <option value="Admin" @selected(old('role') == 'Admin')>Admin</option>
+                            <option value="admin" @selected(old('role') == 'admin')>Admin IT</option>
+                            <option value="principal" @selected(old('role') == 'principal')>Kepala Sekolah</option>
+                            <option value="teacher" @selected(old('role') == 'teacher')>Guru</option>
+                            <option value="student" @selected(old('role') == 'student')>Siswa</option>
+                            <option value="parent" @selected(old('role') == 'parent')>Orang Tua</option>
                         </select>
                         @error('role')
                             <div class="invalid-feedback">

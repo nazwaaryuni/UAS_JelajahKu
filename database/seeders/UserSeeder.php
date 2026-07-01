@@ -15,27 +15,43 @@ class UserSeeder extends Seeder
     {
         $users = [
             [
-                'name' => 'Tamus Tahir',
-                'email' => 'tamus@gmail.com',
-                'role' => 'Superadmin',
+                'name' => 'IT Admin',
+                'email' => 'admin@gmail.com',
+                'role' => 'admin',
             ],
             [
-                'name' => 'Joh Doe',
-                'email' => 'admin@gmail.com',
-                'role' => 'Admin',
+                'name' => 'Kepala Sekolah',
+                'email' => 'principal@gmail.com',
+                'role' => 'principal',
+            ],
+            [
+                'name' => 'Guru Budi',
+                'email' => 'teacher@gmail.com',
+                'role' => 'teacher',
+            ],
+            [
+                'name' => 'Siswa Tono',
+                'email' => 'student@gmail.com',
+                'role' => 'student',
+            ],
+            [
+                'name' => 'Orang Tua Tono',
+                'email' => 'parent@gmail.com',
+                'role' => 'parent',
             ],
         ];
 
-        foreach ($users as $user) {
-            if (User::where('email', $user['email'])->exists()) {
+        foreach ($users as $userData) {
+            if (User::where('email', $userData['email'])->exists()) {
                 continue;
             }
 
-            User::factory()->create([
-                'name' => $user['name'],
-                'email' => $user['email'],
-                'role' => $user['role'],
+            $user = User::factory()->create([
+                'name' => $userData['name'],
+                'email' => $userData['email'],
+                'role' => $userData['role'],
             ]);
+
         }
     }
 }

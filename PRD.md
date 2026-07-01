@@ -54,7 +54,7 @@ erDiagram
         string name
         string email
         string password
-        string role "principal, teacher, homeroom, student, parent"
+        string role "principal, teacher, student, parent"
     }
     
     STUDENTS {
